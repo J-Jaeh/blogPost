@@ -4,7 +4,7 @@ import com.sparta.blogpost.dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Setter;
 
 import java.util.ArrayList;

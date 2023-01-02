@@ -11,7 +11,7 @@ import com.sparta.blogpost.repository.CommentRepository;
 import com.sparta.blogpost.repository.PostRepository;
 import com.sparta.blogpost.repository.UserRepository;
 import io.jsonwebtoken.Claims;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.validation.constraints.Pattern;
+import javax.validation.constraints.Pattern;
 
 @Getter
 @AllArgsConstructor

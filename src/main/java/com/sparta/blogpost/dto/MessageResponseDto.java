@@ -18,3 +18,7 @@ public class MessageResponseDto {
         this.message = message;
     }
 }
+
+//질문사항 1 왜 두개지 ?
+
+//

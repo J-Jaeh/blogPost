@@ -42,7 +42,7 @@ public class WebSecurityConfig {
         http.csrf().disable();
         // 기본 설정인 Session 방식은 사용하지 않고 JWT 방식을 사용하기 위한 설정
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeHttpRequests()//요청에 대한 권한을 지정할 수 있다.
+        http.authorizeRequests()//요청에 대한 권한을 지정할 수 있다.
                 //requestMatchers는 어느 주소범위로 할것인지 의미하며
                 //.permitAll()는 시큐리티를 적용하지 않고 모두 통과시키겠다는의미이다.
                 //   /api/post/get은 게시글과 댓글 전체조회일때 /api/post/get/**은 선택조회일때
@@ -50,16 +50,16 @@ public class WebSecurityConfig {
                 //   /api/user/** 유저 생성이나 회원가입일때
                 // 넣어주지 않으면 조회할때 로그인을 해서 토큰을 넣어줘야한다.
                 // 그냥 로그인한 아무토큰만 넣어주면된다.. 조회할때는
-                // 검사로직을 우리가 넣어주지 않았으니까 그냥 시큐리티 부분에서 막히는거다.
+                // 검사로직을 우리가 넣어주지 않았으니까 그냥 시큐리티 부분에서 막히는거다.   // 효근님 깃허브에 올리신거 제가 포크로 가져온거 애요 넵
                 // 회원가입에는 무조건 통과되게 해줘야한다.
                 // 회원가입해야 로그인을 할수있는데 회원가입하려면 로그인하라는게 말이되겠는가?
                 // 그리고.. 로그인도 로그인란으로 이동하게 해줘야하는데..
                 // 잘못하면 두번인증한다. 로그인창으로 바로 이동하게 해주자.
                 // http에서 해본게 아니라서 이걸 회원가입만 열어야할지 로그인만 열어야할지
                 // http에서 해본사람만 알것이다.
-                .requestMatchers("/api/user/**").permitAll()
-                .requestMatchers("/h2-console").permitAll()
-                .requestMatchers("/api/post/get","/api/post/get/**").permitAll()
+                .antMatchers("/api/user/**").permitAll()
+                .antMatchers("/h2-console").permitAll()
+                .antMatchers("/api/post/get","/api/post/get/**").permitAll()
 //                .requestMatchers("/api/post/get/**/comment").permitAll()
                 .anyRequest().authenticated()//인증이 되어야 한다는 이야기이다.
                 //.anonymous() : 인증되지 않은 사용자도 접근할 수 있다.

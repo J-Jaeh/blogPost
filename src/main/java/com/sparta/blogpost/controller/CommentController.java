@@ -4,7 +4,7 @@ package com.sparta.blogpost.controller;
 import com.sparta.blogpost.dto.*;
 import com.sparta.blogpost.security.UserDetailsImpl;
 import com.sparta.blogpost.service.CommentService;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;

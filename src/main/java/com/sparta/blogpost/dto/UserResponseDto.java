@@ -2,7 +2,7 @@ package com.sparta.blogpost.dto;
 
 import com.sparta.blogpost.entity.User;
 import com.sparta.blogpost.enums.UserRoleEnum;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
